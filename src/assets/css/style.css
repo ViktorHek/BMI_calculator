@@ -15,3 +15,46 @@ h1{
     text-decoration: underline;
     text-align: center;
 }
+
+link h2{
+    padding-left:30px;
+}
+
+link{
+    boarder:10px #ccc solid;
+    padding:10px;
+    border-radius:15px;
+    width:80%;
+    margin:auto;
+    list-style:none;
+    text-decoration: none;
+    color: #000;
+
+}
+
+a:hover{
+    color:red;
+}
+
+a:active{
+    color:green;
+}
+
+.min_form{
+    padding:20px;
+}
+
+.form_group{
+    padding-bottom:15px;
+}
+
+.min_form input[type="text"], .min_form textarea{
+    padding:8px;
+    width:100%;
+}
+.button{
+    background-color: #333;
+    color:#fff;
+    padding: 10px 15px 
+    border: none;
+}
