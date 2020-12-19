@@ -6,13 +6,38 @@
   "author": "viktor <viktorkarlsson125@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "cypress": "^5.3.0"
+    "cypress": "^6.1.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5"
   },
   "dependencies": {
     "superstatic": "^7.0.1"
   },
   "scripts": {
-		"start": "superstatic src --port 3001",
-		"cy:open": "yarn start & cypress open"
-	}
+    "start": "PORT=3000 react-scripts start",
+    "build": "react-scripts build && echo '/* /index.html 200' | cat >build/_redirects",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "start:silent": "PORT=3000 BROWSER=none react-scripts start",
+    "cy:open": "cypress open & yarn start --silent",
+    "cypress": "start-server-and-test start:silent http://localhost:3000/ cy:open"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
